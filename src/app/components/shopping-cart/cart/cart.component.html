@@ -1,0 +1,17 @@
+
+<h3>Cart</h3>
+
+<div *ngIf="cartItems.length===0" class="alert alert-info">No items added</div>
+
+<ul *ngIf="cartItems.length > 0" class="list-group">
+  <li class="list-group-item" *ngFor="let i of cartItems">
+    <app-cart-item [cartItem]="i"></app-cart-item>
+  </li>
+
+  <li class="list-group-item active">
+    <strong>Total: {{ cartTotal | currency:'EUR' }}</strong>
+  </li>
+
+ <!---- <button class="btn btn-danger" (click)="reset()">Reset</button>-->
+
+</ul>
